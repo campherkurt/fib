@@ -7,7 +7,7 @@ before_install:
 
 
 script:
-    - docker run k123cee/multi-client-test npm test -- --coverage
+    - docker run -e CI=true k123cee/multi-client-test npm test
 
 
 after_success:
