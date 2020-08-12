@@ -15,3 +15,8 @@ after_success:
     - docker build -t k123cee/multi-nginx ./nginx
     - docker build -t k123cee/multi-server ./server
     - docker build -t k123cee/multi-worker ./worker
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    - docker push k123cee/multi-client
+    - docker push k123cee/multi-nginx
+    - docker push k123cee/multi-server
+    - docker push k123cee/multi-worker
